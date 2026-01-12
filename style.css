@@ -24,50 +24,78 @@ body {
 }
 
 .container {
-  width: 100%;
+  width: 90%;
   max-width: 400px;
   text-align: center;
+  padding: 15px;
 }
 
 .avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin-bottom: 15px;
+  width: 120px;        /* quadrato fisso */
+  height: 120px;       /* quadrato fisso */
+  border-radius: 50%;  /* cerchio perfetto */
+  object-fit: cover;   /* ritaglia l’immagine per riempire il cerchio */
+  display: block;
+  margin: 0 auto 15px auto; /* centra l’immagine */
 }
 
 h1 {
   margin: 10px 0;
+  font-size: 1.5rem;
 }
 
 p {
   margin-bottom: 25px;
   color: lightblue;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
 .link {
   display: block;
   background: lightblue;
   color: black;
-  padding: 15px;
+  padding: 12px;
   margin: 10px 0;
   border-radius: 10px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .link:hover {
-  background: lightblue;
+  background: deepskyblue;
 }
 
-
 .text-box {
-  display: inline-block; /* si adatta al testo */
-  padding: 10px 20px;
+  display: inline-block;
+  padding: 10px 15px;
   border-radius: 10px;
   background: linear-gradient(
-    rgba(0,0,0,0.7),  /* in alto più scuro */
-    rgba(0,0,0,0.3)   /* in basso più trasparente */
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.3)
   );
   text-align: center;
+  width: 100%;
+}
+
+/* Media queries per schermi piccoli */
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .link {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
 }
